@@ -1,0 +1,613 @@
+
+# coding: utf-8
+
+# In[1]:
+
+import urllib as url
+
+
+# In[2]:
+
+import bs4.BeautifulSoup as bs
+
+
+# In[3]:
+
+import bs4
+
+
+# In[4]:
+
+f=url.urlopen('http://www.moneycontrol.com/mccode/globalmarkets/')
+
+
+# In[5]:
+
+text=f.read()
+
+
+# In[6]:
+
+bsoj=bs4.BeautifulSoup(text)
+
+
+# In[7]:
+
+tables=bsoj.findAll('table')
+
+
+# In[8]:
+
+i=0
+
+
+# In[9]:
+
+a=[]
+
+
+# In[34]:
+
+while i<=len(tables)-1:
+    a.append(tables[i])
+    i=i+1
+    
+
+
+# In[12]:
+
+a
+
+
+# In[13]:
+
+type(a)
+
+
+# In[14]:
+
+a[4]
+
+
+# In[15]:
+
+import re
+
+
+# In[16]:
+
+x=a[4]
+
+
+# In[17]:
+
+type(x)
+
+
+# In[18]:
+
+x
+
+
+# In[19]:
+
+"class=gl-12" in x
+
+
+# In[21]:
+
+r"<tr class='gL-12'>" in x
+
+
+# In[22]:
+
+'Dr Reddy ADR' in x
+
+
+# In[23]:
+
+"Dr Reddy ADR" in x
+
+
+# In[26]:
+
+for table in a:
+    
+    
+    
+
+
+# In[27]:
+
+x
+
+
+# In[33]:
+
+list=[]
+
+
+# In[31]:
+
+type(x)
+
+
+# In[34]:
+
+
+
+
+# In[35]:
+
+a
+
+
+# In[36]:
+
+x=a[4]
+
+
+# In[37]:
+
+type(x)
+
+
+# In[38]:
+
+x
+
+
+# In[39]:
+
+x.getText(seperator='\n')
+
+
+# In[44]:
+
+ftow=x.get_text(separator='    ')
+
+
+# In[45]:
+
+f=open(r'F:\My studies\Misc\money_control.csv','w')
+
+
+# In[46]:
+
+f.flush(ftow)
+
+
+# In[47]:
+
+f.write(ftow)
+
+
+# In[48]:
+
+ftow
+
+
+# In[49]:
+
+type(ftow)
+
+
+# In[52]:
+
+write=f.writelines(ftow)
+
+
+# In[53]:
+
+write
+
+
+# In[54]:
+
+write
+
+
+# In[55]:
+
+f.writelines(ftow)
+
+
+# In[56]:
+
+f.close()
+
+
+# In[58]:
+
+f=open(r'F:\My studies\Misc\money_control.csv','rU')
+
+
+# In[59]:
+
+f.read()
+
+
+# In[60]:
+
+x
+
+
+# In[73]:
+
+ftow=x.get_text(separator="  ")
+
+
+# In[75]:
+
+ftow
+
+
+# In[67]:
+
+f=open(r'F:\My studies\Misc\money_control.csv','w')
+
+
+# In[69]:
+
+f.writelines(ftow+"\n")
+
+
+# In[70]:
+
+f.close()
+
+
+                import re
+                
+# In[76]:
+
+re.search(r'Dr',ftow)
+
+
+# In[78]:
+
+list=[[1,2,3],[4,5,6],[7,8,9]]
+
+
+# In[79]:
+
+list
+
+
+# In[80]:
+
+for var in list:
+    print(var)
+
+
+# In[81]:
+
+for var in list:
+    for var in var:
+        print(var)
+
+
+# In[82]:
+
+x
+
+
+# In[83]:
+
+a
+
+
+# In[84]:
+
+ftow
+
+
+# In[85]:
+
+import re
+
+
+# In[127]:
+
+m=re.findall(r'\S+\s+\w+\s+\w+\s+\w+\S+\s+\S+\s+\S+',ftow)
+
+
+#     m.group()
+
+# In[130]:
+
+m
+
+
+# In[140]:
+
+f=open(r'F:\My studies\Misc\money_control.csv','w')
+
+
+# In[141]:
+
+for var in m:
+    f.writelines(var+'\n')
+
+
+# In[142]:
+
+f.close()
+
+
+# In[143]:
+
+f=open(r'F:\My studies\Misc\money_control.csv','rU')
+
+
+# In[144]:
+
+f.readlines()
+
+
+# In[2]:
+
+import pandas as pnd
+
+
+# In[3]:
+
+import matplotlib.pyplot as plt
+
+
+# In[13]:
+
+f=pnd.read_csv(r'F:\My studies\Projects\Wallmart-8th-Nov\train.csv',skip_blank_lines=False)
+
+
+# In[9]:
+
+f.index
+
+
+# In[20]:
+
+f.tail(10)
+
+
+# In[22]:
+
+f=pnd.read_html(r'http://www.moneycontrol.com/mccode/globalmarkets/')
+
+
+# In[23]:
+
+import urllib as url
+
+
+# In[24]:
+
+html=url.urlopen(r'http://www.moneycontrol.com/mccode/globalmarkets/','rU')
+
+
+# In[25]:
+
+html=html.read()
+
+
+# In[30]:
+
+clip=pnd.read_clipboard()
+
+
+# In[31]:
+
+clip
+
+
+# In[32]:
+
+import sqlite3 as sql
+
+
+# In[34]:
+
+conn=sql.Connection('orcl')
+
+
+# In[35]:
+
+Recent
+
+
+# In[36]:
+
+get_ipython().set_next_input(u'import cx_Freeze');get_ipython().magic(u'pinfo2 cx_Freeze')
+
+
+# In[ ]:
+
+import cx_Freeze
+
+
+# In[37]:
+
+get_ipython().magic(u'pinfo2 cx_freeze')
+
+
+# In[41]:
+
+f.describe()
+
+
+# In[55]:
+
+f.set_index('FinelineNumber',inplace=True)
+
+
+# In[60]:
+
+f.ix[1000]
+
+
+# In[61]:
+
+f.reset_index(inplace=True)
+
+
+# In[62]:
+
+f
+
+
+# In[63]:
+
+f['FinelineNumber','TripType']
+
+
+# In[64]:
+
+
+
+
+# In[65]:
+
+f
+
+
+# In[91]:
+
+f[f['TripType']=='25' & f['Weekday']=='Sunday']
+
+
+# In[93]:
+
+f[(f.Weekday=='Sunday')&(f.TripType==25)]
+
+
+# In[95]:
+
+f=pnd.read_clipboard()
+
+
+# In[98]:
+
+type(f)
+
+
+# In[110]:
+
+rep=lambda d: d.replace('$','')
+
+
+# In[114]:
+
+rep(f.price)
+
+
+# In[124]:
+
+emp=pnd.read_csv('F:\My studies\Misc\emp.csv')
+
+
+# In[125]:
+
+dept=pnd.read_csv('F:\My studies\Misc\dept.csv')
+
+
+# In[163]:
+
+empleftdept=pnd.merge(emp,dept,how='left',left_on=emp.DEPTNO,right_on=dept.DEPTNO,suffixes=('emp.dept','dept.dept'))
+
+
+# In[164]:
+
+empleftdept.sort('EMPNO',ascending=False)
+
+
+# In[145]:
+
+cols=['EMPNO','ENAME','JOB','DEPTNO_x','DNAME','LOC']
+
+
+# In[149]:
+
+empnew=empleftdept[cols]
+
+
+# In[165]:
+
+empnew[(empnew.LOC=='DALLAS')&(empnew.DEPTNO_x==20)]
+
+
+# In[168]:
+
+pnd.concat([empnew,empleftdept])
+
+
+# In[174]:
+
+def clean(d):
+    if d=='NaN': 
+        return 'NULL'
+
+
+# In[178]:
+
+empnew=empnew['DEPTNOdept.dept']=empnew.DEPTNO_x.apply(clean)
+
+
+# In[180]:
+
+empnew
+
+
+# In[4]:
+
+import pandas as pnd
+
+
+# In[19]:
+
+f=pnd.read_csv(r'F:\My studies\Projects\Wallmart-8th-Nov\train.csv')
+
+
+# In[20]:
+
+f
+
+
+# In[13]:
+
+f=f.groupby('Weekday')
+
+
+# In[14]:
+
+f
+
+
+# In[23]:
+
+gr=f.groupby(f.Weekday)
+
+
+# In[31]:
+
+f
+
+
+# In[39]:
+
+visit=f.groupby('VisitNumber')
+
+
+# In[40]:
+
+import matplotlib.pyplot as plt
+
+
+# In[41]:
+
+final=visit.aggregate({'Weekday':pnd.Series.unique,'FinelineNumber':[np.mean,np.median]})
+
+
+# In[43]:
+
+final.hist()
+
